@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Prototipo: Detección Ocular & Lectura</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- MediaPipe Face Mesh (JS) -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh@0.4/face_mesh.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Prototipo: Detección Ocular & Lectura</h1>
+    <div id="status">Estado: <span id="wsStatus">Local</span></div>
+  </header>
+
+  <main>
+    <section class="left">
+      <article id="content" tabindex="0">
+        <h2>Texto de prueba</h2>
+        <p>Este es un párrafo de ejemplo que sirve para probar la ampliación automática y la lectura por fijación visual. Puedes fijar la mirada sobre cualquier palabra o mover el cursor encima para que sea leída.</p>
+        <p>Prueba con distintos largos de frase y distintas posiciones en la pantalla. Si el sistema detecta esfuerzo, el texto aumentará automáticamente.</p>
+      </article>
+    </section>
+
+    <aside class="right">
+      <div class="card">
+        <h3>Cámara</h3>
+        <video id="cam" autoplay playsinline></video>
+        <canvas id="overlay"></canvas>
+        <div class="controls">
+          <button id="toggleCam">Ocultar cámara</button>
+          <label>Privacidad: <input type="checkbox" id="localOnly" checked></label>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Indicadores</h3>
+        <div>Esfuerzo: <span id="effortVal">0.00</span></div>
+        <div>Foco: <span id="gazeVal">—</span></div>
+        <div>Lectura: <span id="reading">—</span></div>
+      </div>
+
+      <div class="card">
+        <h3>Acciones</h3>
+        <button id="forceEnlarge">Aumentar texto</button>
+        <button id="stopSpeech">Detener lectura</button>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <small>Prototipo — procesado local por defecto. Backend opcional disponible.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

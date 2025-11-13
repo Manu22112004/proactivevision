@@ -1,0 +1,17 @@
+:root{--base-font:16px}
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Arial,Helvetica,sans-serif;margin:0;padding:0;font-size:var(--base-font);color:#111}
+header{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:#0d1117;color:white}
+main{display:flex;gap:16px;padding:16px}
+.left{flex:1}
+.right{width:360px;display:flex;flex-direction:column;gap:12px}
+.card{background:#fff;padding:12px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+#cam{width:320px;height:240px;background:#000;border-radius:6px}
+#overlay{position:relative;top:-240px;left:0;width:320px;height:240px;pointer-events:none}
+article{padding:12px;border-radius:6px}
+button{padding:8px 12px;border-radius:6px;border:1px solid #ccc;background:#f6f6f6;cursor:pointer}
+footer{padding:10px;text-align:center;color:#666}
+.highlight{background:yellow}
+.magnifier{position:fixed;border:2px solid #444;border-radius:6px;overflow:hidden;width:220px;height:120px;z-index:9999;box-shadow:0 6px 18px rgba(0,0,0,0.25);transform-origin:center}
+
+@media (max-width:900px){main{flex-direction:column}.right{width:auto}}
